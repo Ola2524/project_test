@@ -1,0 +1,92 @@
+/* Start General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --main-color: #fffcd2;
+    --background-color: #fffef3;
+    --border-color: #666448;
+    --hover-color: #f7f7f7;
+}
+body {
+    background-color: var(--background-color)
+}
+/* End General styles */
+/* Start navigation filter */
+.nav-filter {
+    background-color: var(--main-color);
+    height: 180px;
+}
+/* End navigation filter */
+/* Start main page style */
+.moshaf-pages {
+    display: flex;
+    justify-content: center;
+    border: 10px solid var(--border-color);
+    max-width: 80%;
+    margin: 30px auto 0;
+    background-color: #fff;
+}
+.moshaf-pages .first-page,
+.moshaf-pages .second-page {
+    padding: 15px;
+    width: 50%;
+}
+.moshaf-pages .first-page {
+    border-left: 10px solid var(--border-color);
+    position: relative;
+}
+.moshaf-pages .sura {
+    display: flex;
+    flex-wrap: wrap;
+}
+@media (max-width: 992px) {
+    .moshaf-pages {
+        border: 5px solid var(--border-color);
+        max-width: 90%;
+    }
+}
+@media (max-width: 576px) {
+    .moshaf-pages {
+        border: 5px solid var(--border-color);
+        max-width: 95%;
+    }
+    .moshaf-pages .first-page {
+        border-left: 5px solid var(--border-color);
+    }
+    .moshaf-pages div {
+        padding: 10px;
+    }
+}
+.ayah {
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 10px 0;
+}
+.ayah:hover {
+    background-color: var(--hover-color);
+    cursor: pointer;
+}
+.separator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    /* display: inline-block; */
+    margin-left: 15px;
+    margin-right: 15px;
+}
+.separator-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 1;
+}
+.separator-img img{
+    width: 30px;
+}
+/* End main page style */
