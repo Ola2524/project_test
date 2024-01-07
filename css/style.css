@@ -61,6 +61,12 @@ body {
     }
 }
 
+.ayah-active {
+    background-color: var(--hover-color);
+    position: relative;
+    z-index: 5;
+}
+
 .moshaf-pages object{
     width: 50%;
 }
