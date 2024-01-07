@@ -60,33 +60,8 @@ body {
         padding: 10px;
     }
 }
-.ayah {
-    display: flex;
-    flex-wrap: nowrap;
-    padding: 10px 0;
-}
-.ayah:hover {
-    background-color: var(--hover-color);
-    cursor: pointer;
-}
-.separator {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    z-index: 2;
-    /* display: inline-block; */
-    margin-left: 15px;
-    margin-right: 15px;
-}
-.separator-img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    z-index: 1;
-}
-.separator-img img{
-    width: 30px;
+
+.moshaf-pages object{
+    width: 50%;
 }
 /* End main page style */
