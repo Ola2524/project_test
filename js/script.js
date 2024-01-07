@@ -1,34 +1,43 @@
 let pages = document.getElementById("moshaf-pages")
-// const parsesvg = new DOMParser().parseFromString(XMLDocument, "text/xml");
-// console.log(parsesvg);
-// for (let index = 1; index < 3; index++) {
-// pages.innerHTML += `<img src="../images/00${index}.svg">`    
-//     pages.innerHTML += `<object id="sura" data="../images/00${index}.svg" type="image/svg+xml"></object>`
-//     let sura = document.getElementById("sura")
-//     console.log(sura.value);
-// }
 
-
-pages.innerHTML += `<object id="sura" data="../images/001.svg" type="image/svg+xml"></object>`
-// let sura = document.getElementById("sura")
-// console.log(sura);
+// pages.innerHTML += `
+// <div class="border">
+// <img src="../images/border.svg"/>
+// </div>
+// <object id="sura" data="../images/003.svg" type="image/svg+xml"></object>`
+var page = 1
+pages.innerHTML += `<object id="sura" data="../images/${page}.svg" type="image/svg+xml"></object>`
 
 window.addEventListener("load", function () {
     let svgObject = document.getElementById('sura').contentDocument;
+    let ayah = svgObject.querySelectorAll(".ayahPolygon");
 
-    for (let index = 1; index < 8; index++) {
-        let ayah = svgObject.getElementById(`verse-${index}`);
+    for (let index = 0; index < ayah.length; index++) {
 
-        ayah.addEventListener("mouseover", function () {
-            ayah.setAttribute("fill-opacity", 0.05);
-            ayah.style.cursor = "pointer"
+        ayah[index].addEventListener("mouseover", function () {
+            ayah[index].setAttribute("fill-opacity", 0.05);
+            ayah[index].style.cursor = "pointer"
         })
 
-        ayah.addEventListener("mouseout", function () {
-            ayah.setAttribute("fill-opacity", 0);
+        ayah[index].addEventListener("mouseout", function () {
+            ayah[index].setAttribute("fill-opacity", 0);
         })
     }
-
-
 });
 
+let nextBtn = document.getElementById("next");
+let prevBtn = document.getElementById("prev");
+
+nextBtn.addEventListener("click", function () {
+    if (page < 10) {
+        page++
+        pages.innerHTML = `<object id="sura" data="../images/${page}.svg" type="image/svg+xml"></object>`
+    }
+});
+
+prevBtn.addEventListener("click", function () {
+    if (page > 0) {
+        page--
+        pages.innerHTML = `<object id="sura" data="../images/${page}.svg" type="image/svg+xml"></object>`
+    }
+});
