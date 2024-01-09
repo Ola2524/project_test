@@ -4,15 +4,18 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 :root {
     --main-color: #fffcd2;
     --background-color: #fffef3;
     --border-color: #666448;
     --hover-color: #f7f7f7;
 }
+
 body {
     background-color: var(--background-color)
 }
+
 /* End General styles */
 
 /* Start main page style */
@@ -20,35 +23,71 @@ body {
     position: relative;
     height: 100%;
 }
+
 .moshaf-pages {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 10px solid var(--border-color);
     width: 50%;
-    margin: 5px auto 0;
+    margin: 100px auto 0;
+    padding: 20px 0;
     background-color: #fff;
+}
+
+.filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.filter .suar,
+.filter .hezb {
+    cursor: pointer;
+}
+
+.surah {
+    margin-top: 20px;
+    padding: 0 20px;
+    text-align: right;
+}
+
+.ayah {
+    cursor: pointer;
+    padding: 10px;
+}
+
+.ayah,
+.separator {
+    margin-top: 20px;
+}
+
+.ayah:hover{
+    background-color: rgb(0, 0, 0, 0.05);
+}
+
+img {
+    width: 30px;
+}
+
+.separator {
+    display: inline-block;
     position: relative;
-    z-index: 10;
+    margin-left: 15px;
+    margin-right: 15px;
 }
 
-.moshaf-pages object{
-    width: 100%;
-}
-
-.border {
+.separator img{
+    width: 30px;
     position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 0;
-    width: 100%;
-    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }
-.border img {
-    width: 100%;
-    height: 100%;
-    padding: 20px;
+
+.page-num {
+    text-align: center;
+    margin-top: 20px;
+    cursor: pointer;
 }
+
 #next,
 #prev {
     position: absolute;
@@ -58,30 +97,63 @@ body {
     bottom: 50%;
     cursor: pointer;
 }
+
 #next {
     left: 100px;
 }
+
 #prev {
     right: 100px;
+}
+
+.suar-filter,
+.hezb-filter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: var(--main-color);
+    width: 800px;
+    height: 400px;
+    padding: 50px 30px;
+    display: none;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.suar-filter .close,
+.hezb-filter .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 30px;
+}
+
+.suar-filter div,
+.hezb-filter div{
+    cursor: pointer;
+    width: 105px;
+    text-align: center;
 }
 /* End main page style */
 
 /* Media query for responsive */
 @media (max-width: 992px) {
     .moshaf-pages {
-        border: 5px solid var(--border-color);
         width: 50%;
     }
 }
+
 @media (max-width: 576px) {
     .moshaf-pages {
-        border: 5px solid var(--border-color);
         width: 100%;
     }
+
     #next {
         bottom: -70px !important;
         left: 30px !important;
     }
+
     #prev {
         bottom: -70px !important;
         right: 30px !important;
