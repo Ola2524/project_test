@@ -59,7 +59,7 @@ body {
     margin-top: 20px;
 }
 
-.ayah:hover{
+.ayah:hover {
     background-color: rgb(0, 0, 0, 0.05);
 }
 
@@ -74,12 +74,12 @@ img {
     margin-right: 15px;
 }
 
-.separator img{
+.separator img {
     width: 30px;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
 }
 
 .page-num {
@@ -107,34 +107,62 @@ img {
 }
 
 .suar-filter,
-.hezb-filter {
+.hezb-filter,
+.page-filter {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     background-color: var(--main-color);
     width: 800px;
     height: 400px;
     padding: 50px 30px;
     display: none;
     flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
+    border-radius: 15px;
 }
 
 .suar-filter .close,
-.hezb-filter .close {
+.hezb-filter .close,
+.page-filter .close {
     position: absolute;
     top: 10px;
     right: 15px;
     font-size: 30px;
+    cursor: pointer;
 }
 
-.suar-filter div,
-.hezb-filter div{
+.suar-filter .sura-name,
+.hezb-filter .hezb-name {
     cursor: pointer;
-    width: 105px;
+    width: 115px;
     text-align: center;
+    border: 1px solid #000;
+    border-radius: 20px;
+    margin: 0 10px;
+    padding: 5px;
 }
+
+.page-filter .page-num {
+    cursor: pointer;
+    width: 50px;
+    height: 35px;
+    text-align: center;
+    border: 1px solid #000;
+    border-radius: 50%;
+    margin: 0 10px;
+    padding: 5px;
+}
+
+
+.suar-filter .sura-name:hover,
+.hezb-filter .hezb-name:hover,
+.page-filter .page-num:hover {
+    background-color: var(--background-color);
+}
+
 /* End main page style */
 
 /* Media query for responsive */
